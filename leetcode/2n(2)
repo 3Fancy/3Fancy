@@ -1,10 +1,10 @@
 Struct ListNode* addTwoNumbers(struct ListNode *l1, struct ListNode* l2) {
-    struct ListNode *head = NULL, *tail = NULL;
+    struct ListNode *head = NULL, *tail = NULL;//构造链表
     int carry = 0;
     while (l1 || l2) 
     {
         int n1 = l1 ? l1->val : 0;
-        int n2 = l2 ? l2->val : 0;
+        int n2 = l2 ? l2->val : 0;//确认位数
         int sum = n1 + n2 + carry;
         if (!head) 
         {
@@ -32,7 +32,7 @@ Struct ListNode* addTwoNumbers(struct ListNode *l1, struct ListNode* l2) {
     if (carry > 0) {
         tail->next = malloc(sizeof(struct ListNode));
         tail->next->val = carry;
-        tail->next->next = NULL;
+        tail->next->next = NULL;//进位
     }
     return head;
 }
